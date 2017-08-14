@@ -1,0 +1,102 @@
+html body {
+  background: #f4f4f4;
+  color: #333;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial;
+  padding: 60px 0 0;
+}
+
+.container {
+  margin: 30px 0;
+}
+
+.container a {
+  color: #ea0c0c;
+}
+
+.container a:hover {
+  color: #ea0c0c;
+}
+
+.header.col-md-12 {
+  background: rgba(0,0,0,0.9);
+  position: fixed;
+  padding: 0px 20px 0;
+  text-align: center;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+}
+
+.header h1 {
+  background: url('../media/180sxclub-logo-white.png') no-repeat 0 0;
+  height: 56px;
+  margin: 0 auto;
+  text-indent: -9999px;
+  width: 265px;
+}
+
+.details {
+  float: left;
+  margin: 0 10px 0 0;
+  width: 20%;
+}
+
+.result-detail {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.result-detail h2 {
+  padding: 20px 10px 5px;
+}
+
+.list-group {
+  overflow: hidden;
+}
+
+.grid-container .list-group-item {
+  background: #fff;
+  border-radius: 4px;
+  float: left;
+  list-style: none;
+  margin: 0 0 10px 10px;
+}
+
+.list-group-item h2:hover {
+  color: #ea0c0c;
+  cursor: pointer;
+}
+
+.list-group-item[data-active="true"] {
+  background: rgba(240,16,25,0.9);
+  color: #fff;
+}
+
+.list-group-item[data-active="true"]:hover {
+  background: rgba(240,16,25,0.9);
+  color: #fff;
+}
+
+.footer {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 20px 0 0;
+  padding: 15px 0 0;
+  text-align: center;
+}
+
+@media(min-width: 100px) and (max-width: 768px) {
+  .result-detail h2 {
+    font-size: 1.5em;
+  }
+  .grid-container .list-group {
+    margin-top: 10px;
+    padding: 0;
+  }
+  .grid-container .list-group-item {
+    float: none;
+    margin: 0 0 10px;
+  }
+}
