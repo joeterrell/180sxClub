@@ -33,7 +33,6 @@ class App extends Component {
   }
 
   updatePost = (selectedPostKey) => {
-    console.log(selectedPostKey);
     let newPost = this.fetchPostData(selectedPostKey);
     this.setState({postData: newPost});
   }

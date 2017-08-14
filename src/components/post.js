@@ -8,7 +8,6 @@ class Post extends Component {
     this.state = {
       localPostData: props.postData,
       localPostListData: props.postListData
-
     };
   }
 

@@ -8,18 +8,31 @@ class ContentArea extends Component {
     super(props);
 
     this.state = {
-      contentUpdated: false
+      postData: false
     };
   }
+
+  /*refreshPostData = () => {
+    let localData = false;
+
+    return localData;
+  }*/
+  // this.setState({postData: this.props.postData});
+
+  /*
+    TODO: This component is only refreshing it's data when the setState is called
+    from it's parent. So when I hit the thumb to change article it is not updating
+    this component a second time. I need to look into if this is the case.
+  */
 
   renderContent = () => {
     debugger;
     if (this.props.postData) {
       return (
         <Post
-          postData={this.props.postData}
           onPostSelect={this.props.onPostSelect}
-          postListData={this.props.postListData} />
+          postListData={this.props.postListData}
+          postData={this.props.postData} />
       )
     }
 
@@ -28,8 +41,6 @@ class ContentArea extends Component {
         onPostSelect={this.props.onPostSelect}
         postListData={this.props.postListData} />
     )
-
-    return DynamicContent;
   }
 
   render() {
