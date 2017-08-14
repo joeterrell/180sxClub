@@ -13,9 +13,11 @@ class PostList extends Component {
 
   renderPostItems = () => {
     const PostItems = this.state.localData.posts.map(function(post) {
+      debugger;
       return (
         <PostListItem
           title={post.title}
+          thumbnail={post.thumbnail_images.thumbnail.url}
           excerpt={post.excerpt}
           url={post.slug}
           key={post.id} />

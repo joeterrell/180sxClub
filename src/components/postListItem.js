@@ -6,9 +6,8 @@ class PostListItem extends Component {
   };
 
   render() {
-    debugger
-    let excerpt = JSON.parse(this.props.excerpt);
-    
+    const _this = this;
+    const renderHTML = (escapedHTML: string) => React.createElement("div", { dangerouslySetInnerHTML: { __html: escapedHTML } });
     return (
       <li
         className="list-group-item"
@@ -18,8 +17,9 @@ class PostListItem extends Component {
           this.props.handleSerpSelected(this.props.key)
         }
       }>
-        <h2><a href="/{this.props.url}/" title="{this.props.title}">{this.props.title}</a></h2>
-        <p>{this.props.excerpt}</p>
+        <img src={this.props.thumbnail} height="175" width="260" />
+        <h2><a href="/{this.props.url}/" title={this.props.title}>{renderHTML(_this.props.title)}</a></h2>
+        {renderHTML(_this.props.excerpt)}
       </li>
     );
   }

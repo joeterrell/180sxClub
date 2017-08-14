@@ -1,6 +1,5 @@
 html body {
-  background: #f4f4f4;
-  color: #333;
+  background: #222c37;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial;
   padding: 60px 0 0;
 }
@@ -56,26 +55,54 @@ html body {
 }
 
 .grid-container .list-group-item {
-  background: #fff;
-  border-radius: 4px;
+  background-color: transparent;
+  //border-color: #ddd;
+  border: 0px;
+  border-bottom: 1px dotted #768faa;
+  color: #fff;
   float: left;
   list-style: none;
   margin: 0 0 10px 10px;
+  padding: 20px 20px;
+  transition: 0.3s;
 }
 
-.list-group-item h2:hover {
-  color: #ea0c0c;
+.grid-container .list-group-item h2 a {
+  color: #768faa;
+  font-size: 1.3rem;
+}
+
+.grid-container .list-group-item h2 a:hover {
+  color: #222c37;
+  text-decoration: none;
+}
+
+.list-group-item img {
+  float: left;
+  margin: 0px 20px 0px 0;
+}
+
+.grid-container .list-group-item:hover {
   cursor: pointer;
+  background: #768faa;
+  border-color: #768faa;
 }
 
-.list-group-item[data-active="true"] {
-  background: rgba(240,16,25,0.9);
-  color: #fff;
+.grid-container .list-group-item:hover img {
+  opacity: 1;
+  background-position: 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
 }
 
-.list-group-item[data-active="true"]:hover {
-  background: rgba(240,16,25,0.9);
-  color: #fff;
+.grid-container .list-group-item:hover h2 a {
+  color: #222c37;
+  text-decoration: none;
 }
 
 .footer {
