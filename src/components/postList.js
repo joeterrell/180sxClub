@@ -6,21 +6,22 @@ class PostList extends Component {
     super(props);
 
     this.state = {
-      localData: props.postListData,
-      selectedComponentKey: null
+      localData: props.postListData
     };
   }
 
   renderPostItems = () => {
+    const _this = this;
     const PostItems = this.state.localData.posts.map(function(post) {
-      debugger;
       return (
         <PostListItem
           title={post.title}
           thumbnail={post.thumbnail_images.thumbnail.url}
           excerpt={post.excerpt}
           url={post.slug}
-          key={post.id} />
+          key={post.id}
+          id={post.id}
+          onPostSelect={_this.props.onPostSelect} />
       );
     });
 

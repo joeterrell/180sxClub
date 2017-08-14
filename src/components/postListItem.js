@@ -8,13 +8,14 @@ class PostListItem extends Component {
   render() {
     const _this = this;
     const renderHTML = (escapedHTML: string) => React.createElement("div", { dangerouslySetInnerHTML: { __html: escapedHTML } });
+
     return (
       <li
         className="list-group-item"
         data-active={this.props.active}
+        data-postid={this.props.id}
         onClick={() => {
-          this.props.onResultSelect(this.props.key)
-          this.props.handleSerpSelected(this.props.key)
+          this.props.onPostSelect(this.props.id)
         }
       }>
         <img src={this.props.thumbnail} height="175" width="260" />

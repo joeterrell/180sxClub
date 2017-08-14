@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import SideBar from './components/sideBar';
-import PostList from './components/postList';
+import ContentArea from './components/contentArea';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      localSerpData: false,
-      cachedResultsData: null,
-      selectedResult: this.fetchDetailedResult(),
-      postListData: this.fetchSERPList()
+      postListData: this.fetchPostListData(),
+      postData: false
     };
   }
 
@@ -21,25 +18,34 @@ class App extends Component {
     return postData.posts;
   }
 
-  fetchSERPList = () => {
+  fetchPostListData = () => {
     return require('../data/180sxclub-get-recent-posts.json');
   }
 
-  updateDetailedResult = (selectedResultKey) => {
-    let newResult = this.fetchDetailedResult(selectedResultKey);
-    this.setState({selectedResult: newResult});
+  fetchPostData = (postId) => {
+    let postData = null;
+
+    if (postId) {
+      postData = require('../data/' + postId + '.json');
+    }
+
+    return postData;
+  }
+
+  updatePost = (selectedPostKey) => {
+    console.log(selectedPostKey);
+    let newPost = this.fetchPostData(selectedPostKey);
+    this.setState({postData: newPost});
   }
 
   render() {
     return (
       <div className='grid-container'>
         <div className='row'>
-          <div className='col-md-12'>
-            <PostList
-              onResultSelect={selectedResultKey => this.updateDetailedResult(selectedResultKey)}
-              postListData={this.state.postListData} />
-            <SideBar />
-          </div>
+          <ContentArea
+            onPostSelect={selectedPostKey => this.updatePost(selectedPostKey)}
+            postListData={this.state.postListData}
+            postData={this.state.postData} />
         </div>
       </div>
     );
