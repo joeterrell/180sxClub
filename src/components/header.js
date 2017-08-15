@@ -7,7 +7,7 @@ class Header extends Component {
 
   renderHeader = () => {
     const _this = this;
-    debugger;
+    
     return (
       <h1 onClick={() => {
         _this.props.onTitleClick('homepage')

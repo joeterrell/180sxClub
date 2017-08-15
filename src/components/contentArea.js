@@ -14,7 +14,7 @@ class ContentArea extends Component {
   }
 
   renderContent = () => {
-    debugger;
+    //debugger;
     if (this.props.postData) {
       return (
         <Post
@@ -26,11 +26,14 @@ class ContentArea extends Component {
 
     return (
       <div>
-        <Homepage />
-        <PostList
-          onPostSelect={this.props.onPostSelect}
-          postListData={this.props.postListData} />
-        <SideBar />
+        <Homepage
+          onMenuSelect={this.props.onMenuSelect} />
+        <div className='latest-articles-container'>
+          <PostList
+            onPostSelect={this.props.onPostSelect}
+            postListData={this.props.postListData} />
+          <SideBar />
+        </div>
       </div>
     )
   }

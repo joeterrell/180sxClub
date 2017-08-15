@@ -10,7 +10,7 @@ class Post extends Component {
     const _this = this;
     const postData = _this.props.postData;
     const renderHTML = (escapedHTML: string) => React.createElement("div", { dangerouslySetInnerHTML: { __html: escapedHTML } });
-    debugger;
+    //debugger;
     return (
       <div className="post-content col-md-9">
         <h1>{renderHTML(postData.post.title)}</h1>
@@ -21,7 +21,7 @@ class Post extends Component {
   }
 
   renderPostListItem = () => {
-    debugger;
+    //debugger;
     const _this = this;
     const PostItems = this.props.postListData.posts.map(function(post) {
       return (

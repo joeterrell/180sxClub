@@ -15,7 +15,6 @@ class App extends Component {
 
   fetchDetailedResult = (key) => {
     let postData = require('../data/180sxclub-get-recent-posts.json');
-
     return postData.posts;
   }
 
@@ -25,22 +24,34 @@ class App extends Component {
 
   fetchPostData = (postId) => {
     let postData = null;
-
     if (postId) {
       postData = require('../data/' + postId + '.json');
     }
-
     return postData;
   }
 
   renderHomepage = (pageToRender) => {
-    debugger;
     this.setState({postData: false});
+    this.addClass('homepage');
   }
 
-  updatePost = (selectedPostKey) => {
+  renderLatestArticles = () => {
+    this.removeClass('homepage');
+    debugger;
+  }
+
+  renderPost = (selectedPostKey) => {
     let newPost = this.fetchPostData(selectedPostKey);
     this.setState({postData: newPost});
+    this.removeClass('homepage');
+  }
+
+  removeClass = (cssClass) => {
+    document.body.classList.remove(cssClass);
+  }
+
+  addClass = (cssClass) => {
+    document.body.classList.add(cssClass);
   }
 
   render() {
@@ -54,7 +65,8 @@ class App extends Component {
         </div>
         <div className='row'>
           <ContentArea
-            onPostSelect={selectedPostKey => this.updatePost(selectedPostKey)}
+            onMenuSelect={pageToRender => this.renderLatestArticles(pageToRender)}
+            onPostSelect={selectedPostKey => this.renderPost(selectedPostKey)}
             postListData={this.state.postListData}
             postData={this.state.postData} />
         </div>
