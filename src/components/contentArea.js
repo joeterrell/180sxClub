@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SideBar from './sideBar';
 import Post from './post';
 import PostList from './postList';
+import Homepage from './homepage.js';
 
 class ContentArea extends Component {
   constructor(props) {
@@ -11,19 +12,6 @@ class ContentArea extends Component {
       postData: false
     };
   }
-
-  /*refreshPostData = () => {
-    let localData = false;
-
-    return localData;
-  }*/
-  // this.setState({postData: this.props.postData});
-
-  /*
-    TODO: This component is only refreshing it's data when the setState is called
-    from it's parent. So when I hit the thumb to change article it is not updating
-    this component a second time. I need to look into if this is the case.
-  */
 
   renderContent = () => {
     debugger;
@@ -37,9 +25,13 @@ class ContentArea extends Component {
     }
 
     return (
-      <PostList
-        onPostSelect={this.props.onPostSelect}
-        postListData={this.props.postListData} />
+      <div>
+        <Homepage />
+        <PostList
+          onPostSelect={this.props.onPostSelect}
+          postListData={this.props.postListData} />
+        <SideBar />
+      </div>
     )
   }
 

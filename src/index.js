@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import ContentArea from './components/contentArea';
+import Header from './components/header';
 
 class App extends Component {
   constructor(props) {
@@ -32,6 +33,11 @@ class App extends Component {
     return postData;
   }
 
+  renderHomepage = (pageToRender) => {
+    debugger;
+    this.setState({postData: false});
+  }
+
   updatePost = (selectedPostKey) => {
     let newPost = this.fetchPostData(selectedPostKey);
     this.setState({postData: newPost});
@@ -40,6 +46,12 @@ class App extends Component {
   render() {
     return (
       <div className='grid-container'>
+        <div className='row'>
+          <div className='header col-md-12'>
+            <Header
+              onTitleClick={pageToRender => this.renderHomepage(pageToRender)} />
+          </div>
+        </div>
         <div className='row'>
           <ContentArea
             onPostSelect={selectedPostKey => this.updatePost(selectedPostKey)}

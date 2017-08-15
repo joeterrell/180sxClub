@@ -4,30 +4,26 @@ import PostListItem from './postListItem';
 class Post extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      localPostData: props.postData,
-      localPostListData: props.postListData
-    };
   }
 
   renderPost = () => {
     const _this = this;
+    const postData = _this.props.postData;
     const renderHTML = (escapedHTML: string) => React.createElement("div", { dangerouslySetInnerHTML: { __html: escapedHTML } });
-
+    debugger;
     return (
       <div className="post-content col-md-9">
-        <h1>{renderHTML(_this.state.localPostData.post.title)}</h1>
-        <p><img src={_this.state.localPostData.post.thumbnail_images.full.url} width={_this.state.localPostData.post.thumbnail_images.full.width} height={_this.state.localPostData.post.thumbnail_images.full.height} alt={renderHTML(_this.state.localPostData.post.title)} /></p>
-        <p>{renderHTML(_this.state.localPostData.post.content)}</p>
+        <h1>{renderHTML(postData.post.title)}</h1>
+        <p><img src={postData.post.thumbnail_images.full.url} width={postData.post.thumbnail_images.full.width} height={postData.post.thumbnail_images.full.height} alt={renderHTML(postData.post.title)} /></p>
+        <p>{renderHTML(postData.post.content)}</p>
       </div>
     );
   }
 
   renderPostListItem = () => {
-    //debugger;
+    debugger;
     const _this = this;
-    const PostItems = this.state.localPostListData.posts.map(function(post) {
+    const PostItems = this.props.postListData.posts.map(function(post) {
       return (
         <PostListItem
           title={post.title}

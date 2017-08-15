@@ -1,5 +1,6 @@
 html body {
   background: #222c37;
+  background: #000;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial;
   padding: 60px 0 0;
 }
@@ -15,7 +16,8 @@ html body {
 }
 
 .header.col-md-12 {
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.8);
+  left: 0;
   position: fixed;
   padding: 0px 20px 0;
   text-align: center;
@@ -26,10 +28,15 @@ html body {
 
 .header h1 {
   background: url('../media/180sxclub-logo-white.png') no-repeat 0 0;
+  cursor: pointer;
   height: 56px;
   margin: 0 auto;
   text-indent: -9999px;
   width: 265px;
+}
+
+.header h1:hover {
+  opacity: 0.8;
 }
 
 .list-group {
@@ -90,12 +97,28 @@ html body {
   color: #768faa;
 }
 
-.sidebar {
+.sidebar ul.homepage-sidebar {
+  padding: 0;
 
 }
 
-.sidebar ul {
+.sidebar ul.homepage-sidebar li {
+  cursor: pointer;
+  margin: 20px 0 25px;
+}
 
+.sidebar ul.homepage-sidebar li h4 {
+  color: #768faa;
+  display: block;
+  font-size: 1.1rem;
+}
+
+.sidebar ul.homepage-sidebar li a h4:hover {
+  text-decoration: none;
+}
+
+.sidebar ul li {
+  list-style: none;
 }
 
 .sidebar ul li.list-group-item {
@@ -118,6 +141,51 @@ html body {
   margin: 0 0 20px 0;
 }
 
+.homepage-container {
+  background: #000;
+  height: 825px;
+  position: relative;
+}
+
+.homepage-container .text-container {
+  left: 50%;
+  margin-left: -50%;
+  position: absolute;
+  top: 200px;
+}
+
+.homepage-container .text-container span {
+  color: #fff;
+  font-family: 'Open sans', Helvetica, Arial;
+  font-size: 3.5rem;
+}
+
+.homepage-container .text-container ul {
+  margin: 40px 0 0;
+  padding: 0 0;
+}
+
+.homepage-container .text-container ul li {
+  border-bottom: 1px dotted #fff;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2rem;
+  list-style: none;
+  margin: 0 40px 0 0;
+}
+
+.homepage-container .text-container ul li:hover {
+  color: #768faa;
+}
+
+.video-background {
+  left: -39%;
+  opacity: 0.4;
+  position: absolute;
+  top: -125px;
+  width: 1840px;
+}
 
 .footer {
   background: #fff;
