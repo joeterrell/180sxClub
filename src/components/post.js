@@ -14,7 +14,6 @@ class Post extends Component {
     return (
       <div className="post-content col-md-8">
         <h1>{renderHTML(postData.post.title)}</h1>
-        <p><img src={postData.post.thumbnail_images.full.url} width={postData.post.thumbnail_images.full.width} height={postData.post.thumbnail_images.full.height} alt={renderHTML(postData.post.title)} /></p>
         <p>{renderHTML(postData.post.content)}</p>
       </div>
     );

@@ -1,5 +1,7 @@
 html body {
   background: #10151a;
+  background: url('../media/latestposts-background2.jpg') 0 0 no-repeat;
+  background-size: cover;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial;
   padding: 60px 0 0;
 }
@@ -12,7 +14,7 @@ body.homepage {
   margin: 0px 0;
 }
 .container a {
-  color: #ea0c0c;
+  color: #90aac6;
 }
 .container a:hover {
   color: #ea0c0c;
@@ -124,6 +126,7 @@ body.homepage {
 
 .sidebar ul {
   padding: 0;
+  margin: 20px 0 0;
 }
 
 .sidebar ul li {
@@ -264,13 +267,38 @@ body.homepage .post-container {
   text-align: center;
 }
 
-#content-area {
-
+#content-area iframe {
+  border: 0;
+  padding: 20px 0;
 }
 
 #content-area h1 {
   color: #fff;
   margin: 0 0 30px;
+}
+
+#content-area .post-content img {
+  width: 100%;
+}
+
+#content-area .post-content p {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+#content-area .post-content ul.half-width {
+  overflow: hidden;
+}
+
+#content-area .post-content ul.half-width li {
+  float: left;
+  width: 48%;
+}
+
+#content-area .post-content ul li {
+  font-size: 20px;
+  line-height: 30px;
+  margin: 0 0 20px 0;
 }
 
 @media(min-width: 100px) and (max-width: 768px) {

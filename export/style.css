@@ -1,24 +1,26 @@
 html body {
-  background: #f4f4f4;
-  color: #333;
+  background: #10151a;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial;
   padding: 60px 0 0;
 }
 
-.container {
-  margin: 30px 0;
+body.homepage {
+  background: #000;
 }
 
+.container {
+  margin: 0px 0;
+}
 .container a {
   color: #ea0c0c;
 }
-
 .container a:hover {
   color: #ea0c0c;
 }
 
 .header.col-md-12 {
-  background: rgba(240,16,25,0.9);
+  background: rgba(0,0,0,0.8);
+  left: 0;
   position: fixed;
   padding: 0px 20px 0;
   text-align: center;
@@ -28,27 +30,16 @@ html body {
 }
 
 .header h1 {
-  background: url('../media/serp-monster-logo-white-icon.png') no-repeat 0 0;
+  background: url('../media/180sxclub-logo-white.png') no-repeat 0 0;
+  cursor: pointer;
   height: 56px;
   margin: 0 auto;
   text-indent: -9999px;
-  width: 421px;
+  width: 265px;
 }
 
-.details {
-  float: left;
-  margin: 0 10px 0 0;
-  width: 20%;
-}
-
-.result-detail {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.result-detail h2 {
-  padding: 20px 10px 5px;
+.header h1:hover {
+  opacity: 0.8;
 }
 
 .list-group {
@@ -56,26 +47,212 @@ html body {
 }
 
 .grid-container .list-group-item {
-  background: #fff;
-  border-radius: 4px;
-  cursor: pointer;
+  background-color: transparent;
+  border: 0px;
   float: left;
+  height: 305px;
   list-style: none;
-  margin: 0 0 10px 10px;
+  margin: 0 0 ;
+  padding: 20px 20px;
+  width: 33%;
 }
 
-.list-group-item:hover {
-  color: #ea0c0c;
+.grid-container .list-group-item:first-child {
+  border-radius: 0;
 }
 
-.list-group-item[data-active="true"] {
-  background: rgba(240,16,25,0.9);
+.grid-container .list-group-item h2 {
+  color: #90aac6;
+  font-size: 1.1rem;
+  margin: 20px 0 15px;
+  transition: 0.25s;
+}
+
+.grid-container .list-group-item p {
+  color: #fff;
+  transition: 0.25s;
+}
+
+.grid-container .list-group-item:hover h2 {
   color: #fff;
 }
 
-.list-group-item[data-active="true"]:hover {
-  background: rgba(240,16,25,0.9);
+.grid-container .list-group-item:hover p {
+  color: #f4f4f4;
+}
+
+.grid-container .list-group-item img {
+  transition: all .2s ease-in-out;
+  width: 100%;
+}
+
+.grid-container .list-group-item:hover img {
+  transform: scale(1.1);
+}
+
+.grid-container .list-group-item:hover {
+  cursor: pointer;
+}
+
+.post-content {
   color: #fff;
+  padding: 20px 20px;
+}
+
+.post-content h1 {
+  color: #90aac6;
+}
+
+.sidebar ul.homepage-sidebar {
+  padding: 0;
+}
+
+.sidebar ul.homepage-sidebar li {
+  cursor: pointer;
+  margin: 20px 0 25px;
+}
+
+.sidebar ul.homepage-sidebar li h4 {
+  color: #90aac6;
+  display: block;
+  font-size: 1.1rem;
+}
+
+.sidebar ul.homepage-sidebar li a h4:hover {
+  text-decoration: none;
+}
+
+.sidebar ul {
+  padding: 0;
+}
+
+.sidebar ul li {
+  list-style: none;
+}
+
+.sidebar ul li.list-group-item {
+  border: 0;
+  background: #283543;
+  float: none;
+  height: auto;
+  margin-bottom: 15px;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar ul li.list-group-item:hover {
+  background: #90aac6;
+}
+
+.sidebar ul li.list-group-item h2 {
+  font-size: 1rem;
+  line-height: 1.2rem;
+  margin: 9px 0 0 10px;
+}
+
+.sidebar ul li.list-group-item img {
+  float: left;
+  margin: 0 20px 0 0;
+  width: 48%;
+}
+
+.homepage-container {
+  display: none;
+  position: relative;
+}
+
+.homepage-container .text-container {
+  left: 50%;
+  margin-left: -50%;
+  position: absolute;
+  margin-top: 16%;
+}
+
+.homepage-container .text-container span {
+  color: #90aac6;
+  font-family: 'Open sans', Helvetica, Arial;
+  font-size: 3.5rem;
+}
+
+.homepage-container .text-container .logo {
+  background: url('../media/180sxclub-logo-large-white.png') no-repeat 0 0;
+  display: inline-block;
+  height: 64px;
+  line-height: 4rem;
+  text-indent: -9999px;
+  width: 408px;
+}
+
+.homepage-container .text-container ul {
+  margin: 50px 0 0;
+  padding: 0 0;
+}
+
+.homepage-container .text-container ul li {
+  border-bottom: 1px dotted #90aac6;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2rem;
+  list-style: none;
+  margin: 0 40px 0 0;
+  text-transform: capitalize;
+  transition: 0.25s;
+}
+
+.homepage-container .text-container ul li:hover {
+  color: #90aac6;
+}
+
+.video-background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  opacity: 0.3;
+  height: auto;
+  z-index: -100;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+}
+
+body.animate {
+  transition: 0.25s;
+}
+
+body.hide {
+  opacity: 0;
+}
+
+body.show {
+  opacity: 1;
+}
+
+body.homepage .homepage-container {
+  display: block;
+}
+
+body.homepage .latest-articles-container {
+  display: none;
+}
+body.homepage .header {
+  display: none;
+}
+body.homepage .post-container {
+  display: none;
+}
+
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .footer {
@@ -85,6 +262,15 @@ html body {
   margin: 20px 0 0;
   padding: 15px 0 0;
   text-align: center;
+}
+
+#content-area {
+
+}
+
+#content-area h1 {
+  color: #fff;
+  margin: 0 0 30px;
 }
 
 @media(min-width: 100px) and (max-width: 768px) {
