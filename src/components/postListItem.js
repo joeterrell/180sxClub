@@ -11,16 +11,15 @@ class PostListItem extends Component {
 
     return (
       <li
-        className="list-group-item"
+        className='list-group-item'
         data-active={this.props.active}
         data-postid={this.props.id}
         onClick={() => {
           this.props.onPostSelect(this.props.id)
         }
       }>
-        <img src={this.props.thumbnail} height="175" width="260" />
-        <h2><a href="/{this.props.url}/" title={this.props.title}>{renderHTML(_this.props.title)}</a></h2>
-        {renderHTML(_this.props.excerpt)}
+        <img src={this.props.thumbnail} />
+        <h2>{renderHTML(_this.props.title)}</h2>
       </li>
     );
   }

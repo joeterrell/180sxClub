@@ -31,19 +31,47 @@ class App extends Component {
   }
 
   renderHomepage = (pageToRender) => {
-    this.setState({postData: false});
-    this.addClass('homepage');
+    const _this = this;
+    this.addClass('hide');
+    setTimeout(() => {
+      this.setState({postData: false});
+      setTimeout(() => {
+        _this.addClass('homepage');
+        _this.removeClass('hide');
+      }, 250);
+    }, 250);
   }
 
-  renderLatestArticles = () => {
-    this.removeClass('homepage');
-    debugger;
+  renderLatestPosts = () => {
+    const _this = this;
+    _this.addClass('hide');
+    setTimeout(() => {
+      _this.removeClass('homepage');
+      setTimeout(() => {
+        _this.removeClass('hide');
+      }, 250);
+    }, 250);
   }
 
   renderPost = (selectedPostKey) => {
+    const _this = this;
     let newPost = this.fetchPostData(selectedPostKey);
-    this.setState({postData: newPost});
-    this.removeClass('homepage');
+    this.addClass('hide');
+    setTimeout(() => {
+      _this.removeClass('homepage');
+      this.setState({postData: newPost});
+      setTimeout(() => {
+        _this.removeClass('hide');
+      }, 250);
+    }, 250);
+  }
+
+  renderPageHandler = (pageToRender) => {
+    if (pageToRender === 'latestPosts') {
+      this.renderLatestPosts();
+    } else if (pageToRender) {
+      this.renderPost(pageToRender);
+    }
   }
 
   removeClass = (cssClass) => {
@@ -65,7 +93,7 @@ class App extends Component {
         </div>
         <div className='row'>
           <ContentArea
-            onMenuSelect={pageToRender => this.renderLatestArticles(pageToRender)}
+            onMenuSelect={pageToRender => this.renderPageHandler(pageToRender)}
             onPostSelect={selectedPostKey => this.renderPost(selectedPostKey)}
             postListData={this.state.postListData}
             postData={this.state.postData} />

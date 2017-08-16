@@ -32,7 +32,6 @@ class ContentArea extends Component {
           <PostList
             onPostSelect={this.props.onPostSelect}
             postListData={this.props.postListData} />
-          <SideBar />
         </div>
       </div>
     )

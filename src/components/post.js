@@ -12,7 +12,7 @@ class Post extends Component {
     const renderHTML = (escapedHTML: string) => React.createElement("div", { dangerouslySetInnerHTML: { __html: escapedHTML } });
     //debugger;
     return (
-      <div className="post-content col-md-9">
+      <div className="post-content col-md-8">
         <h1>{renderHTML(postData.post.title)}</h1>
         <p><img src={postData.post.thumbnail_images.full.url} width={postData.post.thumbnail_images.full.width} height={postData.post.thumbnail_images.full.height} alt={renderHTML(postData.post.title)} /></p>
         <p>{renderHTML(postData.post.content)}</p>
@@ -43,7 +43,7 @@ class Post extends Component {
     return (
       <div>
         {this.renderPost()}
-        <div className="col-md-3 sidebar">
+        <div className="col-md-4 sidebar">
           <ul>
             {this.renderPostListItem()}
           </ul>

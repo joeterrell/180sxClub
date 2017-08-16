@@ -16,10 +16,22 @@ class Homepage extends Component {
         <div className='text-container'>
           <span className='title'>Welcome to the <em className='logo'>180sx Club</em></span>
           <ul>
-            <li onClick={_this.props.onMenuSelect('latestArticles')}>Latest articles</li>
-            <li>S13 exhaust guide</li>
-            <li>Import guide</li>
-            <li>Shop</li>
+            <li
+              onClick={() => {
+                _this.props.onMenuSelect('latestPosts')
+              }}>Latest articles</li>
+            <li
+              onClick={() => {
+                _this.props.onMenuSelect('1964')
+              }}>S13 exhaust guide</li>
+            <li
+              onClick={() => {
+                _this.props.onMenuSelect('1982')
+              }}>Import guide</li>
+            <li
+              onClick={() => {
+                window.location.href = 'https://www.redbubble.com/people/180sxclub/works/22718437-s13-tuner-tee?p=classic-tee&style=classic-tee&body_color=white&print_location=front';
+              }}>Shop</li>
           </ul>
         </div>
       </div>

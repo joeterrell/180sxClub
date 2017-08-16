@@ -30,7 +30,7 @@ class PostList extends Component {
 
   render() {
     return (
-      <ul className='col-md-9 list-group'>
+      <ul className='col-md-12 list-group'>
         {this.renderPostItems()}
       </ul>
     );
